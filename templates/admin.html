@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="static/st.css">
+</head>
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="navbar-right">
+    <a href="logout"><i class="fa fa-fw fa-user"></i> Logout</a>
+    <a href="register"><i class="fa fa-fw fa-user"></i> Register New Admin</a>
+    <a href="newuser"><i class="fa fa-fw fa-user"></i> Add New User</a>
+    <a href="/"><i class="fa fa-fw fa-home"></i> Main Page</a>
+    <p>Welcome {{ username }}</p>
+</div>
+<div>
+  <table width=300px>
+  
+    <h2>Number of users & admins</h2>
+      <tr>
+        <th>Users</th>
+        <th>Admins</th>
+      </tr>
+    {% for item in data5 %}
+      <tr>
+        <td>{{item[0]}}</td>
+        <td>{{item[1]}}</td>
+      </tr>
+    
+    {% endfor %}
+  </table>
+</div>
+<div>
+  <table width=300px>
+  
+    <h2>Total number of generated names</h2>
+      <tr>
+        <th>Image names</th>
+        <th>Campaign names</th>
+        <th>Source names</th>
+      </tr>
+    {% for item in data4 %}
+      <tr>
+        <td>{{item[0]}}</td>
+        <td>{{item[1]}}</td>
+        <td>{{item[2]}}</td>
+      </tr>
+    
+    {% endfor %}
+  </table>
+</div>
+<div>
+<table>
+<h2>Number of generated IMAGE names by user and language</h2>
+  <tr>
+    <th>User</th>
+    <th>Language</th>
+    <th>Counts</th>
+  </tr>
+{% for item in data %}
+  <tr>
+    <td>{{item[0]}}</td>
+    <td>{{item[1]}}</td>
+    <td>{{item[2]}}</td>
+  </tr>
+
+{% endfor %}
+</table>
+</div>
+<div>
+<table width=300px>
+
+  <h2>Number of generated CAMPAIGN names by user and region</h2>
+    <tr>
+      <th>User</th>
+      <th>Region</th>
+      <th>Counts</th>
+    </tr>
+  {% for item in data1 %}
+    <tr>
+      <td>{{item[0]}}</td>
+      <td>{{item[1]}}</td>
+      <td>{{item[2]}}</td>
+    </tr>
+  
+  {% endfor %}
+</table>
+</div>
+<div>
+  <table width=300px>
+  
+    <h2>Number of generated IMAGE names by admin and region</h2>
+      <tr>
+        <th>User</th>
+        <th>Region</th>
+        <th>Counts</th>
+      </tr>
+    {% for item in data2 %}
+      <tr>
+        <td>{{item[0]}}</td>
+        <td>{{item[1]}}</td>
+        <td>{{item[2]}}</td>
+      </tr>
+    
+    {% endfor %}
+  </table>
+  </div>
+  <div>
+    <table width=300px>
+    
+      <h2>Number of generated CAMPAIGN names by admin and region</h2>
+        <tr>
+          <th>User</th>
+          <th>Region</th>
+          <th>Counts</th>
+        </tr>
+      {% for item in data3 %}
+        <tr>
+          <td>{{item[0]}}</td>
+          <td>{{item[1]}}</td>
+          <td>{{item[2]}}</td>
+        </tr>
+      
+      {% endfor %}
+    </table>
+    </div>
+</body>
+</html>

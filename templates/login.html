@@ -1,0 +1,33 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+
+        <script>
+            function validateForm() {
+            var x = document.forms["login-form"]["username"].value;
+            if (x==null || x=="") {
+                alert("Name must be filled out");
+                return false;
+            }
+            var y = document.forms["login-form"]["password"].value;
+            if (y==null || y=="") {
+                alert("Password name must be filled out");
+                return false;
+            }
+            }
+    
+            </script>
+    
+        <div class="generator">
+                <form name="login-form" class="my-form" action="/login" onsubmit="return validateForm()" target="_self" method="POST"  >
+                    <h2>Login:</h2>
+                    {% if error %}
+                      <p>{{ error }}</p>
+                    {% endif %}
+                    <input type ="text" name ="username" class="my-form" placeholder="Username"><br>
+                    <input type="password" name="password" class="my-form" placeholder="Password"><br>
+                    <input type="hidden" name="next" value="{{ request.args.get('next', '') }}"/>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+        </div>
+{% endblock %}

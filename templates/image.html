@@ -1,0 +1,81 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+
+	<div class="generator">
+		<h2>Image</h2>
+		<form class="my-form" method="POST" id="generator" action="/image">
+			<label> Product :</label><br>
+			<select id="product" name="product">
+				<option value="Multiple">Multiple</option>
+				<option value="Phones">Phones</option>
+				<option value="Computers">Computers</option>
+				<option value="Bottles">Bottles</option>
+			</select><br>
+			<label> Region :</label><br>
+			<select id="region" name="region">
+				<option value="Multiple">Multiple</option>
+				<option value="EMEA">EMEA</option>
+				<option value="AMERICA">AMERICA</option>
+				<option value="APAC">APAC</option>
+			</select><br>
+			<label> Image Type :</label><br>
+			<select id="image_type" name="image_type">
+				<option value="Small">Small</option>
+				<option value="Medium">Medium</option>
+				<option value="Big">Big</option>
+			</select><br>
+			<label> Language :</label><br>
+			<select id="language" name="language">
+				<option value="English">English</option>
+				<option value="Spanish">Spanish</option>
+				<option value="German">German</option>
+			</select><br>
+			<label> Date :</label><br>
+			<select id="date" name="date">
+				<option value="2020 Jan">2020 Jan</option>
+				<option value="2020 Feb">2020 Feb</option>
+				<option value="2020 Mar">2020 Mar</option>
+				<option value="2020 Apr">2020 Apr</option>
+				<option value="2020 May">2020 May</option>
+				<option value="2020 Jun">2020 Jun</option>
+				<option value="2020 Jul">2020 Jul</option>
+				<option value="2020 Aug">2020 Aug</option>
+				<option value="2020 Sep">2020 Sep</option>
+				<option value="2020 Oct">2020 Oct</option>
+				<option value="2020 Nov">2020 Nov</option>
+				<option value="2020 Dec">2020 Dec</option>
+			</select><br>
+			<label> Industry :</label><br>
+			<select id="industry" name="industry">
+				<option value="Multiple">Multiple</option>
+				<option value="Food">Food</option>
+				<option value="Beverages">Beverages</option>
+				<option value="Electronics">Electronics</option>
+				<option value="Others">Others</option>
+			</select><br>
+			<label> Brand :</label><br>
+			<select id="brand" name="brand">
+				<option value="iPhone">iPhone</option>
+				<option value="MacBook Air">MacBook Air</option>
+				<option value="iBottle">iBottle</option>
+			</select><br>
+			<label> User :</label><br>
+			<select id="user" name="user">
+				<option value="Lasha Gochiashvili">Lasha Gochiashvili</option>
+				<option value="Erim Celen">Erim Celen</option>
+				<option value="Marco Polo">Marco Polo</option>
+				<option value="David Adams">David Adams</option>
+				<option value="Adam Smith">Adam Smith</option>
+			</select><br>
+			<label> Description :</label><br>
+			<input id="description" type="text" placeholder="Write unique name without space" name="description"><br>
+			<input type="submit" value="Generate" name="button" id="sub">
+
+		 </form>
+	</div>	
+	<div class="generator">
+		<p style="text-align: center; padding: 15px; font-size:20px">Generated name:</p>
+		<h1 style="text-align: center;padding: 30px;font-size: 25px;">{{genPro}}_{{genReg}}_{{genImg}}_{{genLan}}_{{genDat}}_{{genInd}}_{{genBra}}_{{genUse}}_{{genDes}}</h1>
+	</div>
+{% endblock %}

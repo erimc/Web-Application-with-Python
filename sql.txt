@@ -1,0 +1,33 @@
+SELECT user.user, history_image.language
+FROM user
+INNER JOIN history_image on user.user = history_image.user 
+WHERE user.department = 'marketing';
+
+
+SELECT COUNT(user.user)
+FROM user
+INNER JOIN history_image on user.user = history_image.user 
+WHERE user.department = 'marketing';
+
+SELECT COUNT(user.user), user.user
+FROM user
+INNER JOIN history_image on user.user = history_image.user;
+
+
+SELECT COUNT(user.user), history_image.language, history_image.user 
+FROM user
+INNER JOIN history_image on user.user = history_image.user group by history_image.user, history_image.language
+ORDER BY 1 DESC;
+
+SELECT admin.fullname, history_image.region, COUNT(record_id)
+FROM admin
+INNER JOIN history_image on admin.fullname = history_image.user 
+group by admin.fullname
+order by desc;
+
+SELECT COUNT(a.record_id)+COUNT(b.record_id)+COUNT(c.record_id) 
+FROM history_image a
+INNER JOIN history_campaign b on a.record_id=b.record_id INNER JOIN history_source c on b.record_id=c.record_id;
+
+
+SELECT (SELECT COUNT(record_id) FROM history_image) AS image_count, (SELECT COUNT(record_id) FROM history_campaign) AS campaign_count, (SELECT COUNT(record_id) FROM history_source) AS source_count

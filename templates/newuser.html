@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>File Name Generator</title>
+</head>
+
+<body>
+  <h1>Register</h1>  
+  {% from "includes/_formhelpers.html" import render_field %}
+  {% if success %}
+    <div>{{success}}</div>
+
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<a href="login"><i class="fa fa-fw fa-user"></i> Login</a>		
+	  
+  {% else %}
+    <form method="POST" action="">
+      <div class="form-group"> 
+        {{render_field(form.ID_User, class_="form-control")}}
+      </div>
+      <div class="form-group"> 
+        {{render_field(form.user, class_="form-control")}}
+      </div>
+      <div class="form-group"> 
+        {{render_field(form.department, class_="form-control")}}
+      </div>
+      <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+    </form>
+   {% endif %} 
+  
+
+  </body>
+</html>
